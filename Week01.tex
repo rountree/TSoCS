@@ -35,7 +35,7 @@
 
 \section{Live Ubuntu}
 
-I have created a custom Ubuntu image\footnote{\url{URL to come}} that will be slightly
+I have created a custom Ubuntu image\footnote{\url{https://github.com/rountree/TSoCS-usb}} that will be slightly
 easier to work with.  There is no persistent storage, however,
 so unless you have off your work elsewhere, you'll lose it as
 soon as you log out. Saving your work off to a remote repository will probably be the
@@ -54,7 +54,6 @@ RAM.  Responsiveness should be much better, but you won't have as much space for
 Boot time will also take a couple of minutes.  If you go this route, hit F10 to continue the
 boot process.
 
-
 \section{byobu/tmux}
 
 Most of our time will be spent in the terminal, often editing multiple files with another
@@ -65,23 +64,62 @@ window, \texttt{Ctrl-a n} goes to the next window, \texttt{Ctrl-a p} goes to the
 window, \texttt{Ctrl-a 3} goes to window 3, and most useful, \texttt{Ctrl-a A} allows you to
 label a window.  
 
-\section{Intel Documentation}
+\section{Github}
 
+Syllabus and weekly notes and assignments are at github.\footnote{\url{https://github.com/rountree/TSoCS}}
 
-
-
-\section{Firestarter}
-
-\section{R}
+We'll have a very brief introduction on how to set up your own repo, add files, save them back to Github,
+and pull them down again elsewhere.
 
 \section{\LaTeX}
 
+A very brief introduction to \LaTeX workflows, including how to embed graphs into
+\LaTeX documents.
+
+\section{The \texttt{msr} kernel module}
+
+We will add the \texttt{msr} kernel module into the running kernel and set the permissions of the device
+files that result using \texttt{chown}.
+
+\section{\texttt{rdmsr} and \texttt{wrmsr}}
+
+Download\footnote{\url{https://01.org/msr-tools}} and compile these utilities.
+
+\section{Intel Documentation}
+
+We'll start from the main page for the Sofware Developers' Manual.\footnote{\url{https://software.intel.com/en-us/articles/intel-sdm}}
+For these assignments, we will spend most of our time in Chapter 14 of volume 3B and chapter 2 of volume 4.
+Intel provides four different formats:  all 4 volumes together, 4 volumes across 4 files, and 4 volumes across 10 files.
+Particularly when you're doing searches, the smaller documents are easier to work with.
+
 \section{Bash shell scripting}
 
-\section{Modprobe and the msr kernel module}
+Do a quick sanity check to make sure we can read the time stamp counter using MSRs.  Get a bit of data.
 
-\section{rdmsr and wrmsr command line tools}
+\section{R}
 
-\section{
+Pull that data into R and graph it.  Save it to a \texttt{png} file.  At what rate does the TSC increment?
+
+\section{Firestarter}
+
+Pull down and compile Firestarter.\footnote{\url{https://github.com/tud-zih-energy/FIRESTARTER}}  
+Note that the build process is a little nonstandard. 
+
+
+\section{A few questions to consider}
+\begin{enumerate}
+	\item Section 14.2 of Volume 3B describes two hardware counters APERF and MPERF.  At what rate do these counters increment during the sleep test?
+	\item Define \textit{effective clock frequency} as $\frac{\delta\texttt{MPERF}}{\delta\texttt{APERF}}$. What is the effective clock frequency during sleep?
+	\item What is the effective clock frequency during a 10-second run of Firestarter on a single core?  On all cores?
+	\item Use \texttt{setitimer}\footnote{Run \texttt{man setitimer} for details} to create a simple program that prints ``Hello, world'' every second.
+	\item Tear down the \texttt{rdmsr} utility to see how to access MSRs via C.  Add the code to the program above to let you read \texttt{APERF} and \texttt{MPERF} once per millisecond.  Graph the results.
+\end{enumerate}
+
+\section{Assignment}
+Modify Firestarter to report back the effective clock frequency at multiple intervals give a fixed amount of work.  Create two graphs:  one showing wall-clock performance versus sampling rate (Does sampling more often slow down Firestarter?  How bad is it?) and a graph that shows effective clock frequency over time.  Repeat this for at least two configurations:  running all cores and running a single core.
+
+
+
+
 
 \end{document}
