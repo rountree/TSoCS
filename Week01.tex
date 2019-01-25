@@ -1,0 +1,87 @@
+\documentclass{tufte-handout}
+
+\title{Week 1:  The Science of Computer Science}
+
+\author{Barry Rountree}
+\date{Spring 2019}
+%\date{28 March 2010} % without \date command, current date is supplied
+
+%\geometry{showframe} % display margins for debugging page layout
+
+\usepackage{graphicx} % allow embedded images
+  \setkeys{Gin}{width=\linewidth,totalheight=\textheight,keepaspectratio}
+  \graphicspath{{graphics/}} % set of paths to search for images
+\usepackage{amsmath}  % extended mathematics
+\usepackage{booktabs} % book-quality tables
+\usepackage{units}    % non-stacked fractions and better unit spacing
+\usepackage{multicol} % multiple column layout facilities
+\usepackage{lipsum}   % filler text
+\usepackage{fancyvrb} % extended verbatim environments
+  \fvset{fontsize=\normalsize}% default font size for fancy-verbatim environments
+
+% Standardize command font styles and environments
+\newcommand{\doccmd}[1]{\texttt{\textbackslash#1}}% command name -- adds backslash automatically
+\newcommand{\docopt}[1]{\ensuremath{\langle}\textrm{\textit{#1}}\ensuremath{\rangle}}% optional command argument
+\newcommand{\docarg}[1]{\textrm{\textit{#1}}}% (required) command argument
+\newcommand{\docenv}[1]{\textsf{#1}}% environment name
+\newcommand{\docpkg}[1]{\texttt{#1}}% package name
+\newcommand{\doccls}[1]{\texttt{#1}}% document class name
+\newcommand{\docclsopt}[1]{\texttt{#1}}% document class option name
+\newenvironment{docspec}{\begin{quote}\noindent}{\end{quote}}% command specification environment
+
+\begin{document}
+
+\maketitle% this prints the handout title, author, and date
+
+\section{Live Ubuntu}
+
+I have created a custom Ubuntu image\footnote{\url{URL to come}} that will be slightly
+easier to work with.  There is no persistent storage, however,
+so unless you have off your work elsewhere, you'll lose it as
+soon as you log out. Saving your work off to a remote repository will probably be the
+easiest solution.  You might also be able to use a second USB, scp, etc.
+
+To boot off a USB in OSX, put in the USB, hold down on the alt/option key, and reboot.
+You should be given the choice of an ``EFI Boot'' device.  Choose that.
+
+I assume networking will not be a problem, but we will figure that out once we get into
+the lab.  Choosing the network at the EFI screen is not necessary (at least not on my machine).
+
+When the grub screen appears (``Try Ubuntu without installing''), you can either select that or,
+if you would like a bit more performance, hit `e'.  This allows you to edit the boot 
+script.  Adding ``toram'' (no quotes) before the ``---'' will load the entire USB image into
+RAM.  Responsiveness should be much better, but you won't have as much space for other things.
+Boot time will also take a couple of minutes.  If you go this route, hit F10 to continue the
+boot process.
+
+
+\section{byobu/tmux}
+
+Most of our time will be spent in the terminal, often editing multiple files with another
+window open for running programs.  One way to handle this is multiple windows.  Another is 
+multiple tabs.  A third is running a terminal multiplexor like tmux or byobu (byobu is what
+I use; the two are mostly indistiguishable).  Briefly:  \texttt{Ctrl-a c} creates a new
+window, \texttt{Ctrl-a n} goes to the next window, \texttt{Ctrl-a p} goes to the previous
+window, \texttt{Ctrl-a 3} goes to window 3, and most useful, \texttt{Ctrl-a A} allows you to
+label a window.  
+
+\section{Intel Documentation}
+
+
+
+
+\section{Firestarter}
+
+\section{R}
+
+\section{\LaTeX}
+
+\section{Bash shell scripting}
+
+\section{Modprobe and the msr kernel module}
+
+\section{rdmsr and wrmsr command line tools}
+
+\section{
+
+\end{document}
