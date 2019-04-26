@@ -34,6 +34,6 @@ Find and fix the bug.
 
 3. Which registers get used the most?  Modify Insmix to optionally report register counts.
 
-4. Fix a broken option or two.
+4. Fix a broken option or two (e.g., no_shared_libs)
 
 5. Make pin scale better over more threads.  
