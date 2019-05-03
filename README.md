@@ -4,36 +4,12 @@ Notes, assignments, slides and errata for the The Science of Computer Science cl
 Insmix
 ======
 
-Easy:
+This week:
 -----
-0. What do each of the columns mean in the insmix.out file?  In the bblcount file?
+0. What do each of the columns mean in the insmix.out file?
 
-1. Which of the options work?
-
-2. What is the most-used instruction for /bin/ls?
-
-3. Insmix doesn't appear to count memory instructions.  Modify Insmix to optionally capture 
-and report these.  
-
-
-Medium:
--------
-1. Modify pin so that only a single routine is measured.
+1. What is the most-used instruction for FIRESTARTER?
 
 2. How much overhead does this pin tool add?
 
-
-Hard:
------
-1.  Bus error.  [CANNOT REPRODUCE]
-This works:     ./pin -t ./insmix.so -- ./FIRESTARTER -t 1 -n 1
-This doesn't:   ./pin -t ./insmix.so -- ./FIRESTARTER -t 10 -n 1
-Find and fix the bug.
-
-2. Modify Insmix so that it is thread safe (and test on firestarter)
-
-3. Which registers get used the most?  Modify Insmix to optionally report register counts.
-
-4. Fix a broken option or two (e.g., no_shared_libs)
-
-5. Make pin scale better over more threads.  
+3. Write a program that does little more than execute a single instruction over and over again.  Measure the power necessary to execute that instruction.  Repeat for at least one other instruction (say, the one used the most by FIRESTARTER).  How much power variation is there across different instructions?
